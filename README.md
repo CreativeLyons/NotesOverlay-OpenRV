@@ -4,16 +4,79 @@
 
 ## ✨ Features
 
-- **Quick Notes** — Add notes via `Review > Add Note` menu or `Shift+N` hotkey
-- **Copy to Clipboard** — Export all notes via `Cmd+Shift+C` (macOS) or `Ctrl+Shift+C`
-- **Multi-line Input** — Full text editor dialog with copy/paste support (Cmd+C/V)
-- **Clear Text** — White text with black outline readable on any background
-- **Smart Wrapping** — Long text automatically wraps to fit within frame
-- **Stacking** — Multiple notes per frame stack vertically
-- **Multi-Source** — Works correctly with sequences containing multiple clips
-- **Timeline Markers** — Frames with notes are automatically marked
-- **Native Annotation Support** — Also captures RV's built-in paint/text annotations
-- **Persistent** — Notes survive session save, autosave, and reload
+### Quick Notes
+- Add notes via `Review > Add Note` menu or `Shift+N` hotkey
+
+![notesOverlay_RV_05](https://github.com/user-attachments/assets/b7e44b26-5fe6-42cd-982d-c577a413466c)
+
+- Multi-line text input with copy/paste support
+
+![notesOverlay_RV_01b](https://github.com/user-attachments/assets/65763889-0a46-4006-a9c0-69748a077df8)
+
+![notesOverlay_RV_02b](https://github.com/user-attachments/assets/6d921c27-d68e-4cc3-bec1-f45059f87e04)
+
+- White text with black outline for readability on any background
+![notesOverlay_RV_04](https://github.com/user-attachments/assets/c368e99c-85da-4008-a0e2-3f5da485fe94)
+
+- Smart text wrapping and vertical stacking
+![notesOverlay_RV_03](https://github.com/user-attachments/assets/08ddba45-fce2-41de-b3c9-b8323d1aee59)
+
+- Notes persist in session files (survives save/autosave)
+
+
+### Copy to Clipboard (New in v1.3.0)
+- Export all notes with `Cmd+Shift+C` (macOS) / `Ctrl+Shift+C`
+- Markdown-friendly format with header, body, and file path
+- Captures both plugin notes AND RV's native paint annotations
+- Drawing-only frames show placeholder
+
+
+Example Note result:
+```
+Notes on pexels-rodnae-productions-8474580.mp4
+2026-01-28 08:20
+
+---
+
+Frame 1
+- *see annotated frame
+
+Frame 18
+- some really long note about how i went ot the moon and we might want to check a bunch of stuff
+- just to test, a new note as well
+
+Frame 29
+- note here
+
+Frame 63
+- note 1
+- another note 2
+- more note
+
+Frame 133
+- WOW look at this here
+
+Frame 194
+- *see annotated frame
+
+Frame 257
+- random note to do on this frame
+
+---
+
+/Users/somebody/Downloads/pexels-rodnae-productions-8474580.mp4
+```
+
+
+### Keyboard Shortcuts
+| Action | Shortcut |
+|--------|----------|
+| Add Note | `Shift+N` |
+| Copy Notes | `Cmd+Shift+C` / `Ctrl+Shift+C` |
+| Submit Note | `Enter` |
+| New Line | `Shift+Enter` |
+| Cancel | `Escape` |
+
 
 ## 🚀 Installation
 
@@ -100,3 +163,5 @@ Open RV is the open-source version of RV, the Sci-Tech award–winning media rev
 ## 📄 License
 
 See [LICENSE](LICENSE) if present.
+
+Video by RDNE Stock project: https://www.pexels.com/video/astronauts-exploring-together-8474587/
