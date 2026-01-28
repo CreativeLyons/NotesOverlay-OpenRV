@@ -45,9 +45,9 @@ zip -r NotesOverlay.rvpkg PACKAGE NotesOverlay.py notes_dialog.mu
 1. Navigate to the frame you want to annotate
 2. Press `Shift+N` or use `Review > Add Note`
 3. Type your note in the dialog (multi-line supported, copy/paste works)
-4. Click "Add Note" to save, or "Cancel" to discard
+4. Press `Enter` to save, `Escape` to cancel (`Shift+Enter` for new line)
 
-Notes appear in the top-left of the image with a bullet point prefix.
+Notes appear in the top-left of the image with a bullet point prefix. The dialog title shows the source frame number for reference.
 
 ## ⚙️ Configuration
 

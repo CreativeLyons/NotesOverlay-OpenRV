@@ -121,7 +121,14 @@ class NotesOverlayMode(MinorMode):
           (closures don't work in Mu callbacks)
         - QPushButton.clicked callbacks must accept (bool checked) parameter
         """
-        self._pending_note_frame = commands.frame()
+        # Check if there's a source at the current frame
+        current_frame = commands.frame()
+        sources = commands.sourcesAtFrame(current_frame)
+        if not sources:
+            extra_commands.displayFeedback("No source at frame - cannot add note", 2.0)
+            return
+
+        self._pending_note_frame = current_frame
 
         try:
             # Load and call the custom Mu dialog module
