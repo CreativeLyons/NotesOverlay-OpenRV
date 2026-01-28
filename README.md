@@ -4,6 +4,14 @@
 
 ## ✨ Features
 
+### Quick Notes:
+- Add notes via `Review > Add Note` menu or `Shift+N` hotkey
+- Multi-line text input with copy/paste support
+- White text with black outline for readability on any background
+- Notes persist in session files (survives save/autosave)
+
+---
+
 #### Add notes via `Review > Add Note` menu or `Shift+N` hotkey
 
 ![notesOverlay_RV_05](https://github.com/user-attachments/assets/b7e44b26-5fe6-42cd-982d-c577a413466c)
