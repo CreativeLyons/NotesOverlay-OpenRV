@@ -5,16 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-01-28
+
+### ✨ Added
+
+- Dialog title displays source frame number ("Add Note @ Frame 1001")
+- Validation check prevents opening dialog when no source at current frame
+- Slack-style keyboard shortcuts via custom NoteTextEdit subclass:
+  - Enter submits note (like sending a message)
+  - Shift+Enter inserts newline
+  - Escape cancels
+  - Enter on empty text cancels (same as Escape)
+
+### 🔄 Changed
+
+- Removed Add/Cancel buttons for keyboard-only interaction
+- More minimal dialog appearance: 55px height, 4px margins
+- Updated placeholder text with keyboard shortcut hints
+
+### 🔧 Technical
+
+- Custom `NoteTextEdit` class overrides `keyPressEvent` for key handling
+- Key learning: class member variables required (module globals inaccessible from class methods in Mu)
+- Added `docs/DEVELOPMENT.md` with Mu/Qt development learnings
+
 ## [1.1.0] - 2026-01-28
 
-### ♻️ Changed
+### 🔄 Changed
 
 - Replaced native text entry with custom Qt dialog for note input
   - Multi-line text editing with proper copy/paste support (Cmd+C/V)
   - Rich text formatting stripped on paste (plain text only)
-  - Compact layout with tight margins and smaller buttons
   - Dialog positioned at bottom of RV window for minimal obstruction
-  - Resizable dialog window
 
 ### 🔧 Technical
 

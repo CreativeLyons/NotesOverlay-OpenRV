@@ -56,6 +56,7 @@ module: notes_dialog {
 
 use qt;
 use commands;
+use extra_commands;
 
 // -----------------------------------------------------------------------------
 // NoteTextEdit - Custom QTextEdit with Slack-style Enter behavior
@@ -93,7 +94,15 @@ class: NoteTextEdit : QTextEdit
                 return;
             }
 
-            // Enter (or Ctrl+Enter) = submit dialog
+            // Enter on empty text = cancel (same as Escape)
+            string text = toPlainText();
+            if (text == "")
+            {
+                _parentDialog.reject();
+                return;
+            }
+
+            // Enter with text = submit dialog
             _parentDialog.accept();
             return;
         }
@@ -124,42 +133,28 @@ NoteTextEdit _txt;
     QWidget parent = mainWindowWidget();
 
     // Create modal dialog
+    // NOTE: setWindowFlags() crashes RV - don't use Qt.Tool, Qt.Popup, or Qt.FramelessWindowHint
     _dlg = QDialog(parent);
-    _dlg.setWindowTitle("Add Note");
+    int srcFrame = sourceFrame(frame());
+    _dlg.setWindowTitle("Add Note @ Frame %d" % srcFrame);
 
-    // Flexible size with reasonable defaults
-    _dlg.resize(500, 95);
+    // Minimal size - just the text input
+    _dlg.resize(500, 55);
 
-    // Vertical layout for dialog contents (tight margins)
+    // Minimal margins for terminal-like feel
     QVBoxLayout layout = QVBoxLayout(_dlg);
-    layout.setContentsMargins(8, 8, 8, 8);
-    layout.setSpacing(6);
+    layout.setContentsMargins(4, 4, 4, 4);
+    layout.setSpacing(0);
 
     // Multi-line text editor with Slack-style Enter behavior
     // Uses custom NoteTextEdit subclass that overrides keyPressEvent
     _txt = NoteTextEdit(_dlg);
     _txt.setAcceptRichText(false);  // Strip formatting on paste
     _txt.setFixedHeight(45);        // ~2 lines of text
-    _txt.setPlaceholderText("Type your note... (Enter to add, Shift+Enter for new line)");
+    _txt.setPlaceholderText("Enter to add, Shift+Enter for new line, Esc to cancel");
     layout.addWidget(_txt);
 
-    // Compact button row
-    QHBoxLayout btnRow = QHBoxLayout();
-    btnRow.addStretch(1);
-
-    QPushButton cancelBtn = QPushButton("Cancel", _dlg);
-    cancelBtn.setFixedHeight(24);
-    btnRow.addWidget(cancelBtn);
-
-    QPushButton addBtn = QPushButton("Add", _dlg);
-    addBtn.setFixedHeight(24);
-    addBtn.setDefault(true);
-    btnRow.addWidget(addBtn);
-
-    layout.addLayout(btnRow);
-
-    connect(addBtn, QPushButton.clicked, doAccept);
-    connect(cancelBtn, QPushButton.clicked, doReject);
+    // No buttons - Enter submits, Escape cancels
 
     // Position dialog: bottom of parent window, horizontally centered
     // Use frameGeometry to include window decorations
@@ -173,7 +168,7 @@ NoteTextEdit _txt;
     // Returns 1 (QDialog.Accepted) or 0 (QDialog.Rejected)
     int result = _dlg.exec();
 
-    // Only send text if user clicked Add
+    // Only send text if dialog was accepted (Enter pressed)
     if (result == 1)
     {
         string text = _txt.toPlainText();
