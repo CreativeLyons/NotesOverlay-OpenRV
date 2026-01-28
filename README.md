@@ -4,31 +4,31 @@
 
 ## ✨ Features
 
-### Quick Notes
-- Add notes via `Review > Add Note` menu or `Shift+N` hotkey
+#### Add notes via `Review > Add Note` menu or `Shift+N` hotkey
 
 ![notesOverlay_RV_05](https://github.com/user-attachments/assets/b7e44b26-5fe6-42cd-982d-c577a413466c)
 
-- Multi-line text input with copy/paste support
+#### Multi-line text input with copy/paste support
 
 ![notesOverlay_RV_01b](https://github.com/user-attachments/assets/65763889-0a46-4006-a9c0-69748a077df8)
 
 ![notesOverlay_RV_02b](https://github.com/user-attachments/assets/6d921c27-d68e-4cc3-bec1-f45059f87e04)
 
-- White text with black outline for readability on any background
+#### White text with black outline for readability on any background
 ![notesOverlay_RV_04](https://github.com/user-attachments/assets/c368e99c-85da-4008-a0e2-3f5da485fe94)
 
-- Smart text wrapping and vertical stacking
+#### Smart text wrapping and vertical stacking
 ![notesOverlay_RV_03](https://github.com/user-attachments/assets/08ddba45-fce2-41de-b3c9-b8323d1aee59)
 
-- Notes persist in session files (survives save/autosave)
+#### Notes persist in session files (survives save/autosave)
 
+---
 
 ### Copy to Clipboard (New in v1.3.0)
 - Export all notes with `Cmd+Shift+C` (macOS) / `Ctrl+Shift+C`
 - Markdown-friendly format with header, body, and file path
-- Captures both plugin notes AND RV's native paint annotations
-- Drawing-only frames show placeholder
+- Captures both plugin notes AND RV's native paint text annotations
+- Drawing-only frames show placeholder "`*see annotation`"
 
 
 Example Note result:
@@ -116,7 +116,7 @@ zip -r NotesOverlay.rvpkg PACKAGE NotesOverlay.py notes_dialog.mu clipboard.mu
 3. Type your note in the dialog (multi-line supported, copy/paste works)
 4. Press `Enter` to save, `Escape` to cancel (`Shift+Enter` for new line)
 
-Notes appear in the top-left of the image with a bullet point prefix. The dialog title shows the source frame number for reference.
+Notes appear in the top-left of the image with a dash prefix. The dialog title shows the source frame number for reference.
 
 ### Exporting Notes
 
@@ -140,7 +140,7 @@ Frame 1045
 /path/to/shot_010_v002.mov
 ```
 
-The export includes both plugin notes and RV's native annotations. Frames with only drawings show `- *see annotated frame` as a placeholder.
+The export includes both this plugin's notes and RV's native text annotations. Frames with only drawings show `- *see annotated frame` as a placeholder.
 
 ## ⚙️ Configuration
 
