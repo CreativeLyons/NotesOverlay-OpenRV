@@ -5,25 +5,33 @@
 ## ✨ Features
 
 ### Quick Notes:
+
 - Add notes via `SnapReview > Add Note` menu or `Shift+N` hotkey
 - Multi-line text input with copy/paste support
 - White text with black outline for readability on any background
 - Notes persist in session files (survives save/autosave)
 
+
 ---
 
 #### Add notes via `SnapReview > Add Note` menu or `Shift+N` hotkey
+![Menu_01](https://github.com/user-attachments/assets/7cda1f00-c849-42c0-b05d-b796001039d9)
 
-![notesOverlay_RV_05](https://github.com/user-attachments/assets/b7e44b26-5fe6-42cd-982d-c577a413466c)
+![notesOverlay_RV_01_notes](https://github.com/user-attachments/assets/2e060d15-31a9-4062-b413-56ed29ee749a)
+
+---
 
 #### Multi-line text input with copy/paste support
-
 ![notesOverlay_RV_01b](https://github.com/user-attachments/assets/65763889-0a46-4006-a9c0-69748a077df8)
 
 ![notesOverlay_RV_02b](https://github.com/user-attachments/assets/6d921c27-d68e-4cc3-bec1-f45059f87e04)
 
+---
+
 #### White text with black outline for readability on any background
 ![notesOverlay_RV_04](https://github.com/user-attachments/assets/c368e99c-85da-4008-a0e2-3f5da485fe94)
+
+---
 
 #### Smart text wrapping and vertical stacking
 ![notesOverlay_RV_03](https://github.com/user-attachments/assets/08ddba45-fce2-41de-b3c9-b8323d1aee59)
@@ -33,13 +41,16 @@
 ---
 
 ### Save Review (New in v1.4.0)
-- Export review package with `Cmd+Shift+S` (macOS) / `Ctrl+Shift+S`
+- Export review package with `Cmd+Shift+S` (macOS) / `Ctrl+Shift+S` or SnapReview > Save Review
 - Creates timestamped folder next to source with:
   - RV session file (`.rv`)
-  - Notes text file with paths to exported content
+  - Notes text file with paths to exported content (`.txt`)
   - Annotated frames as JPGs in `frames/` subfolder
 - Automatically resets view zoom and color corrections before export
 - Works with image sequences (normalizes frame patterns to `###` format)
+![reviewPackage](https://github.com/user-attachments/assets/5b266f77-7f5e-436d-bea7-bb35a0fc3015)
+
+
 
 ### Copy Notes
 - Export all notes with `Cmd+Shift+C` (macOS) / `Ctrl+Shift+C`
@@ -137,8 +148,16 @@ zip -r SnapReview.rvpkg PACKAGE NotesOverlay.py notes_dialog.mu clipboard.mu
 Notes appear in the top-left of the image with a dash prefix. The dialog title shows the source frame number for reference.
 
 ### Exporting Notes
-
+Either Copy Notes to just copy the notes to clipboard:
 Press `Cmd+Shift+C` (macOS) or `Ctrl+Shift+C` to copy all notes to clipboard:
+
+or
+
+`Save Review` to export a review package with annotated frame jpgs, the rv session, and a notes text file.
+
+The contents of the text file is also copied to your clipboard.
+
+The review folder defaults to the same folder as the footage or image sequence.
 
 ```
 Notes on shot_010_v002.mov
