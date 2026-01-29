@@ -44,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### ✨ Added
 
 - **Save Review** — New menu item and `Cmd+Shift+S` / `Ctrl+Shift+S` hotkey
-  - Creates timestamped folder next to source file: `{YYYY-MM-DD_HHMMSS}_{source}-review/`
+  - Creates timestamped folder next to source file: `{YYYY_MM_DD_HHMMSS}_{source}-review/`
   - Exports RV session file (`{source}-review_session.rv`)
   - Exports notes to text file (`{source}_review_notes.txt`)
   - Exports annotated frames as JPGs in `frames/` subfolder with zero-padded frame numbers

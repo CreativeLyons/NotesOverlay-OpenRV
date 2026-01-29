@@ -722,7 +722,7 @@ class NotesOverlayMode(MinorMode):
         # ---------------------------------------------------------------------
         # Step 3: Create review folder
         # ---------------------------------------------------------------------
-        timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        timestamp = datetime.now().strftime("%Y_%m_%d_%H%M%S")
         folder_name = f"{timestamp}_{safe_source_name}-review"
         review_folder = os.path.join(source_dir, folder_name)
 
@@ -1600,7 +1600,7 @@ class NotesOverlayMode(MinorMode):
 
         # Header: source name + datetime
         lines.append(f"Notes on {normalized_source_name}")
-        lines.append(datetime.now().strftime("%Y-%m-%d %H:%M"))
+        lines.append(datetime.now().strftime("%Y_%m_%d %H:%M"))
         lines.append("")
         lines.append("---")
         lines.append("")

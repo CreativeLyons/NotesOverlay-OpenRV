@@ -62,7 +62,7 @@
 Example Note result:
 ```
 Notes on pexels-rodnae-productions-8474580.mp4
-2026-01-28 08:20
+2026_01_28 08:20
 
 ---
 
@@ -161,7 +161,7 @@ The review folder defaults to the same folder as the footage or image sequence.
 
 ```
 Notes on shot_010_v002.mov
-2026-01-28 14:30
+2026_01_28 14:30
 
 ---
 
@@ -184,10 +184,10 @@ source folder:
 When using **Save Review**, the footer also includes paths to the exported content:
 ```
 annotations:
-/path/to/2026-01-29_143022_shot_010_v002-review/frames
+/path/to/2026_01_29_143022_shot_010_v002-review/frames
 
 session:
-/path/to/2026-01-29_143022_shot_010_v002-review/shot_010_v002-review_session.rv
+/path/to/2026_01_29_143022_shot_010_v002-review/shot_010_v002-review_session.rv
 ```
 
 The export includes both this plugin's notes and RV's native text annotations. Frames with only drawings show `- *see annotated frame` as a placeholder.
