@@ -279,3 +279,9 @@ rv.runtime.eval('require clipboard; clipboard.copyPending();', [])
 2. Restart RV after changes
 
 3. Test via `SnapReview > Add Note` menu or `Shift+N` hotkey
+
+## Build from Source
+
+```bash
+zip -r SnapReview.rvpkg PACKAGE NotesOverlay.py notes_dialog.mu clipboard.mu
+```

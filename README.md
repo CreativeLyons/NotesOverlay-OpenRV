@@ -2,6 +2,8 @@
 
 📝 A Python plugin for [OpenRV](https://github.com/AcademySoftwareFoundation/OpenRV) that adds text annotation overlays to your review sessions.
 
+Changelog: [CHANGELOG.md](CHANGELOG.md)
+
 ## ✨ Features
 
 ![notesOverlay_RV_02b](https://github.com/user-attachments/assets/6d921c27-d68e-4cc3-bec1-f45059f87e04)
@@ -116,6 +118,7 @@ Frame 257
 4. Restart RV
 
 ### Development (symlink)
+Development details: `docs/DEVELOPMENT.md`
 
 ```bash
 # macOS
@@ -127,12 +130,6 @@ ln -s /path/to/clipboard.mu ~/Library/Application\ Support/RV/Mu/
 ln -s /path/to/NotesOverlay.py ~/.rv/Python/
 ln -s /path/to/notes_dialog.mu ~/.rv/Mu/
 ln -s /path/to/clipboard.mu ~/.rv/Mu/
-```
-
-### Build from Source
-
-```bash
-zip -r SnapReview.rvpkg PACKAGE NotesOverlay.py notes_dialog.mu clipboard.mu
 ```
 
 ## 📖 Usage
