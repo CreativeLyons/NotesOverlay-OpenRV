@@ -715,8 +715,10 @@ class NotesOverlayMode(MinorMode):
         session_filename = f"{safe_source_name}-review_session.rv"
         session_path = os.path.join(review_folder, session_filename)
 
+        session_saved = False
         try:
             commands.saveSession(session_path, True, True)
+            session_saved = True
         except Exception as e:
             extra_commands.displayFeedback(f"Error saving session: {e}", 3.0)
             print(f"NotesOverlay: Session save error - {e}")
@@ -767,8 +769,9 @@ class NotesOverlayMode(MinorMode):
         # Done - show feedback
         # ---------------------------------------------------------------------
         if exported_count > 0 or notes_text:
+            suffix = " (session save failed)" if not session_saved else ""
             extra_commands.displayFeedback(
-                f"Review saved: {exported_count} annotated frames, notes copied",
+                f"Review saved: {exported_count} annotated frames, notes copied{suffix}",
                 3.0
             )
         else:
