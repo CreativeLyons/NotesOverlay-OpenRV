@@ -15,26 +15,6 @@ module: clipboard {
 
 use qt;
 
-// Module-level storage for text to copy (workaround for complex strings)
-string _pendingText;
-
-//
-// Set text to be copied (called first, handles complex strings)
-//
-\: setPendingText (void; string text)
-{
-    _pendingText = text;
-}
-
-//
-// Copy the pending text to clipboard
-//
-\: copyPending (void;)
-{
-    QClipboard clip = QApplication.clipboard();
-    clip.setText(_pendingText);
-}
-
 //
 // Copy text directly to system clipboard
 //
