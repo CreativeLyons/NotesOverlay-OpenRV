@@ -145,26 +145,6 @@ class NotesOverlayMode(MinorMode):
             extra_commands.displayFeedback(f"Note dialog failed: {e}", 3.0)
             print(f"NotesOverlay: Dialog error - {e}")
 
-    def _open_note_dialog_legacy(self, event):
-        """
-        Legacy: Open note input using RV's native text entry mode.
-
-        This is the old method that uses RV's built-in startTextEntryMode.
-        Kept as fallback but not used by default because:
-        - No copy/paste support
-        - Single line only
-        - Easy to accidentally close and lose input
-        """
-        self._pending_note_frame = commands.frame()
-
-        try:
-            mu_code = 'rvui.startTextEntryMode(\\: (string;) { "Enter note: "; }, \\: (void; string t) { commands.sendInternalEvent("notes-overlay-text-entered", t, ""); }, false)(nil);'
-            rv.runtime.eval(mu_code, [])
-            extra_commands.displayFeedback("Type note and press Enter...", 2.0)
-        except Exception:
-            extra_commands.displayFeedback("Error starting text entry - see console", 2.0)
-            print(traceback.format_exc())
-
     def _on_text_entered(self, event):
         """
         Handle the internal event when text is entered via note dialog.
