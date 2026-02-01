@@ -251,10 +251,6 @@ SHADOW_OFFSET = 0.003       # Outline offset for readability
 # From Python, copy text to clipboard:
 escaped = text.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
 rv.runtime.eval(f'require clipboard; clipboard.copyText("'{escaped}'");', [])
-
-# For complex strings with special characters, use two-step approach:
-rv.runtime.eval('require clipboard; clipboard.setPendingText("...");', [])
-rv.runtime.eval('require clipboard; clipboard.copyPending();', [])
 ```
 
 ## File Reference
